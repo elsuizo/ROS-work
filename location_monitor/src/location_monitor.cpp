@@ -11,14 +11,14 @@
 /* NOTE(elsuizo:2021-07-19): yo lo hago a mi manera bien simple sin clases ni cosas
  * raras, solo una struct que tenga todo publico */
 
-struct Landmark(string name, double x, double y): name(name), x(x), y(y) {
-   string name;
+struct Landmark {
+   std::string name;
    double x;
    double y;
 };
 
 struct LandmarkMonitor {
-   vector<Landmark> landmarks;
+   std::vector<Landmark> landmarks;
 
    LandmarkMonitor(): landmarks() {
       init_landmarks();
@@ -34,9 +34,9 @@ struct LandmarkMonitor {
    // unit_cylinder = {1, -1}
    // unit_sphere = {-1, 0}
    void init_landmarks() {
-      landmarks.push_back(Landmark("unit_box", 1.0, 1.0));
-      landmarks.push_back(Landmark("unit_cylinder", 1.0, -1.0));
-      landmarks.push_back(Landmark("unit_sphere", -1.0, 0.0));
+      landmarks.push_back(Landmark{"unit_box", 1.0, 1.0});
+      landmarks.push_back(Landmark{"unit_cylinder", 1.0, -1.0});
+      landmarks.push_back(Landmark{"unit_sphere", -1.0, 0.0});
    }
 
 };
